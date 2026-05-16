@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "../styles/navbar.css";
 import { NavLink } from "react-router-dom";
-import { FaTwitter, FaInstagram, FaFacebook , FaYoutube, FaUser} from "react-icons/fa";
+import {
+  FaTwitter,
+  FaInstagram,
+  FaFacebook,
+  FaYoutube,
+  FaUser,
+  FaDownload,
+} from "react-icons/fa";
 import Notification from "./Notification";
 
 export default function Navbar() {
- const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-
   const [user, setUser] = useState(null);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +41,6 @@ export default function Navbar() {
   return (
     <div className="fl-nav-wrapper">
       <nav className="fl-navbar">
-
         {/* LOGO */}
         <div className="fl-logo">
           <NavLink to="/" className="fl-logo-icon">
@@ -44,11 +48,8 @@ export default function Navbar() {
           </NavLink>
         </div>
 
-        
-
         {/* LINKS + SOCIAL (GROUPED FOR MOBILE) */}
         <div className={`fl-menu ${menuOpen ? "active" : ""}`}>
-
           <div className="fl-nav-links">
             <NavLink to="/about">About Us</NavLink>
             <NavLink to="/tour">Tours</NavLink>
@@ -56,8 +57,6 @@ export default function Navbar() {
             <NavLink to="/event">Event</NavLink>
             <NavLink to="/contact">Contact</NavLink>
           </div>
-
-        
 
           <div className="fl-social-icons">
             <a href="https://twitter.com" target="_blank" rel="noreferrer">
@@ -72,16 +71,19 @@ export default function Navbar() {
             <a href="https://youtube.com" target="_blank" rel="noreferrer">
               <FaYoutube />
             </a>
-
-          
           </div>
 
+          <div className="fl-download">
+            <a href="/app.apk" download className="download-btn">
+              <FaDownload /> Download App
+            </a>
+          </div>
 
           <div className="fl-auth">
             {user ? (
               <>
                 <span className="user-name">
-                  <FaUser/>
+                  <FaUser />
                 </span>
 
                 <button className="logout-btn" onClick={handleLogout}>
@@ -94,7 +96,6 @@ export default function Navbar() {
               </NavLink>
             )}
           </div>
-
         </div>
 
         {/* HAMBURGER */}
@@ -103,7 +104,7 @@ export default function Navbar() {
           <span></span>
           <span></span>
         </div>
-<Notification/>
+        <Notification />
       </nav>
     </div>
   );

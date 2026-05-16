@@ -5,11 +5,6 @@ import SearchSection from "../components/SearchSection";
 
 import travelImg from "../assets/travel.avif";
 
-// ADD YOUR POSTER IMAGES IN ASSETS
-import rallyPoster from "../assets/rallyPoster.jpg";
-import manifestoPoster from "../assets/manifestoPoster.jpg";
-import invitePoster from "../assets/invitePoster.jpg";
-
 import "../styles/home.css";
 
 import { useState } from "react";
@@ -35,191 +30,10 @@ export default function Home() {
     <div className="fl-home-app">
       <Navbar />
 
-      {/* ================= DISCLAIMER ================= */}
-      <section
-        style={{
-          padding: "18px 20px",
-          background:
-            "linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%)",
-          borderBottom: "3px solid #facc15",
-          color: "#fff",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1300px",
-            margin: "0 auto",
-          }}
-        >
-          <h2
-            style={{
-              marginBottom: "10px",
-              fontSize: "26px",
-              fontWeight: "700",
-            }}
-          >
-            Political & Social Issue Disclaimer
-          </h2>
-
-          <p
-            style={{
-              lineHeight: "1.7",
-              color: "#dbeafe",
-            }}
-          >
-            This website contains political and social awareness related
-            content for informational purposes only.
-          </p>
-
-          <p
-            style={{
-              marginTop: "10px",
-              color: "#fff",
-            }}
-          >
-            <strong>Paid for by Gagan Chawla</strong>
-          </p>
-
-          <p style={{ color: "#dbeafe" }}>
-            <strong>Address:</strong> Panchkula, Haryana &nbsp; | &nbsp;
-            <strong>Phone:</strong> +91 7986063747
-          </p>
-        </div>
-      </section>
-
-      {/* ================= NEW POLITICAL HERO SECTION ================= */}
-      <section className="political-hero">
-        <div className="political-overlay"></div>
-
-        <div className="political-content">
-          {/* LEFT */}
-          <div className="political-left">
-            <span className="political-badge">
-              Aam Aadmi Party • Ward No. 6
-            </span>
-
-            <h1>
-              Panchkula Nagar Nigam Election 2026
-            </h1>
-
-            <h2>
-              Support <span>Gagan Chawla Ji</span>
-            </h2>
-
-            <p>
-              Join the movement for honest politics, better development,
-              transparency, and stronger public support in Panchkula.
-            </p>
-
-            <div className="political-buttons">
-              <button onClick={() => navigate("/contact")}>
-                Join Campaign
-              </button>
-
-              <button
-                className="outline-btn"
-                onClick={() => navigate("/gallery")}
-              >
-                View Events
-              </button>
-            </div>
-
-            {/* INFO CARDS */}
-            <div className="political-info-grid">
-              <div className="political-info-card">
-                <h3>📍 Location</h3>
-                <p>Ward No. 6, Sector 16, 17, 18 Panchkula</p>
-              </div>
-
-              <div className="political-info-card">
-                <h3>📅 Election Year</h3>
-                <p>2026 Municipal Campaign</p>
-              </div>
-
-              <div className="political-info-card">
-                <h3>🤝 Mission</h3>
-                <p>Development, Transparency & Public Support</p>
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT */}
-          <div className="political-right">
-            <img src={invitePoster} alt="candidate" />
-          </div>
-        </div>
-      </section>
-
-      {/* ================= EVENT HIGHLIGHTS ================= */}
-      <section className="event-section">
-        <div className="event-header">
-          <p>Campaign Highlights</p>
-          <h2>Upcoming Political Events & Public Meetings</h2>
-        </div>
-
-        <div className="event-grid">
-          {/* CARD 1 */}
-          <div className="event-card">
-            <img src={manifestoPoster} alt="manifesto" />
-
-            <div className="event-content">
-              <span>5 May 2026</span>
-
-              <h3>Manifesto Launch Event</h3>
-
-              <p>
-                Senior leaders and supporters gathering for public manifesto
-                release and press conference.
-              </p>
-
-              <button>Read More</button>
-            </div>
-          </div>
-
-          {/* CARD 2 */}
-          <div className="event-card">
-            <img src={rallyPoster} alt="rally" />
-
-            <div className="event-content">
-              <span>7 May 2026</span>
-
-              <h3>Massive Public Rally</h3>
-
-              <p>
-                Punjab leaders and supporters joining together to address
-                citizens and support the campaign.
-              </p>
-
-              <button>Explore Rally</button>
-            </div>
-          </div>
-
-          {/* CARD 3 */}
-          <div className="event-card">
-            <img src={invitePoster} alt="door campaign" />
-
-            <div className="event-content">
-              <span>Door-to-Door Campaign</span>
-
-              <h3>Public Interaction Drive</h3>
-
-              <p>
-                Meet local residents directly and discuss development,
-                transparency, and public welfare.
-              </p>
-
-              <button>Join Now</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ================= EXISTING HERO ================= */}
       <section className="fl-home-hero">
         <div className="fl-home-hero-text">
-          <p className="fl-home-hero-tag">
-            Curated Travel Experiences
-          </p>
+          <p className="fl-home-hero-tag">Curated Travel Experiences</p>
 
           <h1>
             Discover the world <br />
@@ -297,9 +111,7 @@ export default function Home() {
                 }}
               />
 
-              <h4 style={{ marginTop: "10px" }}>
-                {tour.location}
-              </h4>
+              <h4 style={{ marginTop: "10px" }}>{tour.location}</h4>
             </div>
           ))}
         </div>
@@ -341,9 +153,7 @@ export default function Home() {
       <section className="fl-home-cta">
         <h2>Start your journey today</h2>
 
-        <button onClick={() => navigate("/gallery")}>
-          Get Started
-        </button>
+        <button onClick={() => navigate("/gallery")}>Get Started</button>
       </section>
 
       {/* MOODS */}
